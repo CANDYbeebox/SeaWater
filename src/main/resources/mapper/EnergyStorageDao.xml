@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sea.dao.EnergyStorageDao">
+
+    <update id="updateEnergyStorage">
+        UPDATE EnengyStorageConverter SET
+        pcsAdd2000 = #{pcsAdd2000},
+        pcsAdd2001 = #{pcsAdd2001},
+        pcsAdd2002 = #{pcsAdd2002},
+        pcsAdd2003 = #{pcsAdd2003},
+        pcsAdd2004 = #{pcsAdd2004},
+        pcsAdd2005 = #{pcsAdd2005},
+        pcsAdd2006 = #{pcsAdd2006},
+        pcsAdd2007 = #{pcsAdd2007},
+        pcsAdd2008 = #{pcsAdd2008},
+        pcsAdd2010 = #{pcsAdd2010},
+        pcsAdd2011 = #{pcsAdd2011},
+        pcsAdd2012Bit0Val0 = #{pcsAdd2012Bit0Val0},
+        pcsAdd2012Bit0Val1 = #{pcsAdd2012Bit0Val1},
+        pcsAdd2012Bit0Val2 = #{pcsAdd2012Bit0Val2},
+        pcsAdd2012Bit4Val0 = #{pcsAdd2012Bit4Val0},
+        pcsAdd2012Bit4Val2 = #{pcsAdd2012Bit4Val2},
+        pcsAdd2012Bit12Val0 = #{pcsAdd2012Bit12Val0},
+        pcsAdd2012Bit12Val1 = #{pcsAdd2012Bit12Val1},
+        pcsAdd2012Bit12Val2 = #{pcsAdd2012Bit12Val2},
+        pcsAdd2012Bit12Val3 = #{pcsAdd2012Bit12Val3},
+        pcsAdd2012Bit12Val4 = #{pcsAdd2012Bit12Val4},
+        pcsAdd2012Bit12Val5 = #{pcsAdd2012Bit12Val5},
+        pcsAdd2014Bit0 = #{pcsAdd2014Bit0},
+        pcsAdd2014Bit1 = #{pcsAdd2014Bit1},
+        pcsAdd2014Bit2 = #{pcsAdd2014Bit2},
+        pcsAdd2014Bit3 = #{pcsAdd2014Bit3},
+        pcsAdd2014Bit4 = #{pcsAdd2014Bit4},
+        pcsAdd2014Bit5 = #{pcsAdd2014Bit5},
+        pcsAdd2014Bit6 = #{pcsAdd2014Bit6},
+        pcsAdd2014Bit7 = #{pcsAdd2014Bit7},
+        pcsAdd2014Bit8 = #{pcsAdd2014Bit8},
+        pcsAdd2014Bit9 = #{pcsAdd2014Bit9},
+        pcsAdd2014Bit10 = #{pcsAdd2014Bit10},
+        pcsAdd2014Bit11 = #{pcsAdd2014Bit11},
+        pcsAdd2014Bit12 = #{pcsAdd2014Bit12},
+        pcsAdd2014Bit13 = #{pcsAdd2014Bit13},
+        pcsAdd2014Bit14 = #{pcsAdd2014Bit14},
+        pcsAdd2014Bit15 = #{pcsAdd2014Bit15},
+        pcsAdd2015Bit0 = #{pcsAdd2015Bit0}
+        WHERE id = #{id}
+    </update>
+    
+    <select id="selectEnergyStorageById" resultType="com.sea.entity.EnergyStorageConverter">
+        SELECT * FROM EnengyStorageConverter WHERE id = #{id}
+    </select>
+</mapper>

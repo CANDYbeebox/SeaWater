@@ -11,7 +11,6 @@
         <setting name="proxyFactory" value="CGLIB"/>
         <setting name="lazyLoadingEnabled" value="true" />
     </settings>
-
     <plugins>
         <plugin interceptor="com.github.pagehelper.PageHelper">
             <property name="dialect" value="mysql" />

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sea.dao.BatteryPackDao">
+
+    <update id="updateBatteryPack">
+        UPDATE batterypack SET
+          bmsAdd0004 = #{bmsAdd0004},
+          bmsAdd0005 = #{bmsAdd0005},
+          bmsAdd0006 = #{bmsAdd0006},
+          bmsAdd0007 = #{bmsAdd0007},
+          bmsAdd0008 = #{bmsAdd0008},
+          bmsAdd0009 = #{bmsAdd0009},
+          bmsAdd0010 = #{bmsAdd0010},
+          bmsAdd0011 = #{bmsAdd0011},
+          bmsAdd0012 = #{bmsAdd0012},
+          bmsAdd0013 = #{bmsAdd0013},
+          bmsAdd0014 = #{bmsAdd0014},
+          bmsAdd0015 = #{bmsAdd0015},
+          bmsAdd0016 = #{bmsAdd0016},
+          bmsAdd0017 = #{bmsAdd0017},
+          bmsAdd0018 = #{bmsAdd0018},
+          bmsAdd0019 = #{bmsAdd0019},
+          bmsAdd0020 = #{bmsAdd0020},
+          bmsAdd0021 = #{bmsAdd0021},
+          bmsAdd0022 = #{bmsAdd0022},
+          bmsAdd0023 = #{bmsAdd0023},
+          bmsAdd0024 = #{bmsAdd0024},
+          bmsAdd0025 = #{bmsAdd0025},
+          bmsAdd0026 = #{bmsAdd0026},
+          bmsAdd0027 = #{bmsAdd0027},
+          bmsAdd0028 = #{bmsAdd0028},
+          bmsAdd0029 = #{bmsAdd0029},
+          bmsAdd0001Bit1 = #{bmsAdd0001Bit1},
+          bmsAdd0001Bit2Val0 = #{bmsAdd0001Bit2Val0},
+          bmsAdd0001Bit2Val1 = #{bmsAdd0001Bit2Val1},
+          bmsAdd0001Bit3 = #{bmsAdd0001Bit3},
+          bmsAdd0001Bit4 = #{bmsAdd0001Bit4},
+          bmsAdd0001Bit5 = #{bmsAdd0001Bit5},
+          bmsAdd0001Bit6 = #{bmsAdd0001Bit6},
+          bmsAdd0002Bit0 = #{bmsAdd0002Bit0},
+          bmsAdd0002Bit1 = #{bmsAdd0002Bit1},
+          bmsAdd0002Bit2 = #{bmsAdd0002Bit2},
+          bmsAdd0002Bit3 = #{bmsAdd0002Bit3},
+          bmsAdd0002Bit4 = #{bmsAdd0002Bit4},
+          bmsAdd0002Bit5 = #{bmsAdd0002Bit5},
+          bmsAdd0002Bit6 = #{bmsAdd0002Bit6},
+          bmsAdd0002Bit7 = #{bmsAdd0002Bit7},
+          bmsAdd0002Bit8 = #{bmsAdd0002Bit8},
+          bmsAdd0002Bit9 = #{bmsAdd0002Bit9}
+        WHERE id = #{id}
+    </update>
+    
+    <select id="selectBatteryPackById" resultType="com.sea.entity.BatteryPack">
+        SELECT * FROM batterypack WHERE id = #{id}
+    </select>
+</mapper>
