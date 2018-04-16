@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sea.dao.DesalinplantDao">
+
+    <update id="updateDesalinplant">
+        UPDATE desalinplant SET
+        id = #{id},
+        desalinplantAdd1007 = #{desalinplantAdd1007},
+        desalinplantAdd1008 = #{desalinplantAdd1008},
+        desalinplantAdd1009 = #{desalinplantAdd1009},
+        desalinplantAdd1010 = #{desalinplantAdd1010},
+        desalinplantAdd1011 = #{desalinplantAdd1011},
+        desalinplantAdd1013 = #{desalinplantAdd1013},
+        desalinplantAdd1014 = #{desalinplantAdd1014},
+        desalinplantAdd1015 = #{desalinplantAdd1015},
+        desalinplantAdd1016 = #{desalinplantAdd1016},
+        desalinplantAdd1018 = #{desalinplantAdd1018},
+        desalinplantAdd1002Bit0Val0 = #{desalinplantAdd1002Bit0Val0},
+        desalinplantAdd1002Bit0Val1 = #{desalinplantAdd1002Bit0Val1},
+        desalinplantAdd1001Bit0 = #{desalinplantAdd1001Bit0},
+        desalinplantAdd1001Bit1 = #{desalinplantAdd1001Bit1},
+        desalinplantAdd1001Bit2 = #{desalinplantAdd1001Bit2},
+        desalinplantAdd1001Bit3 = #{desalinplantAdd1001Bit3},
+        desalinplantAdd1001Bit4 = #{desalinplantAdd1001Bit4},
+        desalinplantAdd1001Bit5 = #{desalinplantAdd1001Bit5},
+        desalinplantAdd1001Bit6 = #{desalinplantAdd1001Bit6},
+        desalinplantAdd1001Bit7 = #{desalinplantAdd1001Bit7},
+        desalinplantAdd1003Bit0 = #{desalinplantAdd1003Bit0},
+        desalinplantAdd1003Bit1 = #{desalinplantAdd1003Bit1},
+        desalinplantAdd1003Bit2 = #{desalinplantAdd1003Bit2},
+        desalinplantAdd1003Bit3 = #{desalinplantAdd1003Bit3},
+        desalinplantAdd1003Bit4 = #{desalinplantAdd1003Bit4},
+        desalinplantAdd1003Bit5 = #{desalinplantAdd1003Bit5},
+        desalinplantAdd1003Bit6 = #{desalinplantAdd1003Bit6},
+        desalinplantAdd1003Bit7 = #{desalinplantAdd1003Bit7},
+        desalinplantAdd1004Bit0 = #{desalinplantAdd1004Bit0},
+        desalinplantAdd1004Bit1 = #{desalinplantAdd1004Bit1},
+        desalinplantAdd1004Bit2 = #{desalinplantAdd1004Bit2},
+        desalinplantAdd1004Bit3 = #{desalinplantAdd1004Bit3},
+        desalinplantAdd1004Bit4 = #{desalinplantAdd1004Bit4},
+        desalinplantAdd1004Bit5 = #{desalinplantAdd1004Bit5},
+        desalinplantAdd1004Bit6 = #{desalinplantAdd1004Bit6},
+        desalinplantAdd1004Bit7 = #{desalinplantAdd1004Bit7}
+        WHERE id = #{id}
+    </update>
+    
+    <select id="selectDesalinplantById" resultType="com.sea.entity.Desalinplant">
+        SELECT * FROM desalinplant WHERE id = #{id}
+    </select>
+</mapper>

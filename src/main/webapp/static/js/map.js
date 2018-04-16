@@ -39,38 +39,78 @@ function addMapControl() {
 }
 
 function showMarker() {
-    var location = [[118.802399,32.058285],[116.351444,40.010506],[118.108641,24.439182]];
-    for(var i = 0; i < location.length; i ++) {
-        var point = new BMap.Point(location[i][0], location[i][1]);
-        var marker = new BMap.Marker(point); //将点转化成标注点
-//                                var label = new window.BMap.Label(i+1, { offset: new window.BMap.Size(0, 0) });
-        var label = new window.BMap.Label(i + 1, { offset: new window.BMap.Size(0, 0) });
-        label.setStyle({
-            color : "white",
-            fontSize : "14px",
-            backgroundColor :"0.05",
-            border :"0",
-            fontWeight :"bold"
-        });
+    $.ajax({
+        type: 'post',
+        url: '../user/companygetter',
+        dataType:"json",
+        success: function(data) {
+            if($.isEmptyObject(data)) {
+                alertWindow("没有符合条件的数据", error);
+            } else {
+                var rowCount = 0;
+                $.each(data, function (i, value) {
 
-        marker.setLabel(label);
-        map.addOverlay(marker);  //将标注点添加到地图上
-        //添加响应监听
-        (function() {
-            // var thePoint = value;
-            marker.addEventListener("click",
-                function() {
-                    alert("aaaa");
-                    //   showInfo(this,thePoint);
-                });
-            marker.addEventListener("mouseover",
-                function() {
-                    //    detail_mapsearch(value.UseUnit);
-                    // showInfo(this,thePoint);
-                });
-        })();
-    }
+                    //表格
+                    rowCount++;
+                    var newRow = '<tr id="FAC' + rowCount + '"><td id="FACID' + rowCount + '"></td>' +
+                        '<td id="FACNAME' + rowCount + '"></td></tr>';
+                    $('#company').append(newRow);
+                    $("#FACID" + rowCount).html(value.id);
+                    $("#FACNAME" + rowCount).html(value.name);
+
+                    //地图标注点
+                    var point = new BMap.Point(value.x, value.y);
+                    var marker = new BMap.Marker(point); //将点转化成标注点
+//                                var label = new window.BMap.Label(i+1, { offset: new window.BMap.Size(0, 0) });
+                    var label = new window.BMap.Label(value.id, { offset: new window.BMap.Size(0, 0) });
+                    label.setStyle({
+                        color : "white",
+                        fontSize : "14px",
+                        backgroundColor :"0.05",
+                        border :"0",
+                        fontWeight :"bold"
+                    });
+
+                    marker.setLabel(label);
+                    map.addOverlay(marker);  //将标注点添加到地图上
+                    //添加响应监听
+                    (function() {
+                        // var thePoint = value;
+                        marker.addEventListener("click",
+                            function() {
+                                alert(value.id);
+                                setId(value.id);
+                                //   showInfo(this,thePoint);
+                            });
+                        marker.addEventListener("mouseover",
+                            function() {
+                            });
+                    })();
+                })
+            }
+        }
+    });
+    
 }
 
-//显示所有电梯
+function setId(id) {
+    $.ajax({
+        type: 'post',
+        url: '../user/mapsessionsetter',
+        data: {
+            id: id
+        },
+        success: function(result) {
+            if (result == "success") {
+                window.location.href="wind.html";
+            } else {
+                alertWindow("跳转失败", "error");
+            }
+        }
+    });
+
+}
+
+
+
 initMap();

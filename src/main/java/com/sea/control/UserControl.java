@@ -1,15 +1,20 @@
 package com.sea.control;
 
+import com.sea.entity.CompanyEntity;
 import com.sea.entity.UserEntity;
+import com.sea.service.UserFun;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Created by try on 2018/3/23.
@@ -17,21 +22,37 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/user")
 public class UserControl {
+    @Autowired
+    UserFun userFun;
     Logger log = LoggerFactory.getLogger(UserControl.class);
 
 
     @RequestMapping("/login")
     @ResponseBody
-    public String login(String username, String password){
+    public String login(String username, String password) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
-        try{
+        try {
             subject.login(token);
             return "success";
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return "error";
         }
+    }
+
+    @RequestMapping(value = "/companygetter", produces = "application/json;charset=utf-8")
+    @ResponseBody
+    public List<CompanyEntity> getDompany() {
+        List<CompanyEntity> ret = userFun.getCompany();
+        return ret;
+    }
+
+    @RequestMapping("/mapsessionsetter")
+    @ResponseBody
+    public String setSessionId(int id, HttpSession session) {
+        session.setAttribute("id", id);
+        return "success";
     }
 
 

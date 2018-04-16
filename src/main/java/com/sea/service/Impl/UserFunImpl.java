@@ -1,6 +1,7 @@
 package com.sea.service.Impl;
 
 import com.sea.dao.UserDao;
+import com.sea.entity.CompanyEntity;
 import com.sea.entity.UserEntity;
 import com.sea.service.UserFun;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -34,5 +35,10 @@ public class UserFunImpl implements UserFun {
     @Override
     public Set<String> getRoles(String username) {
         return udao.getRoles(username);
+    }
+
+    @Override
+    public List<CompanyEntity> getCompany() {
+        return udao.getCompany();
     }
 }

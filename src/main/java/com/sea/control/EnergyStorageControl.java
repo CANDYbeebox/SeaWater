@@ -1,5 +1,6 @@
 package com.sea.control;
 
+import com.exception.NullException;
 import com.exception.updateException;
 import com.sea.entity.BatteryPack;
 import com.sea.entity.EnergyStorageConverter;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by try on 2018/3/31.
@@ -47,7 +50,7 @@ public class EnergyStorageControl {
             "1", "1", "1");
 
     @ResponseBody
-    @RequestMapping(value = "/energystorage", produces = "application/text;charset=utf-8")
+    @RequestMapping(value = "/setenergystorage", produces = "application/text;charset=utf-8")
     public String setEnergyData(EnergyStorageConverter e) {
         log.info("输出为{}", e);
         energyStorageConverter.setId(e.getId());
@@ -187,9 +190,23 @@ public class EnergyStorageControl {
 
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/getenergystorage", produces = "application/json;charset=utf-8")
+    public EnergyStorageConverter getEnergyData(HttpSession session) {
+        EnergyStorageConverter ret = new EnergyStorageConverter();
+        int id = (int)session.getAttribute("id");
+        try {
+            ret = energyStorage.selectEnergyStorageById(id);
+            System.out.println(ret);
+        } catch (NullException e) {
+            log.error(e.getMessage());
+        }
+        return ret;
+    }
+
 
     @ResponseBody
-    @RequestMapping(value = "/battery", produces = "application/text;charset=utf-8")
+    @RequestMapping(value = "/setbattery", produces = "application/text;charset=utf-8")
     public String setBatteryData(BatteryPack b) {
         log.info("输入{}", b);
         batteryPack.setId(b.getId());
@@ -333,4 +350,18 @@ public class EnergyStorageControl {
     }
 
 
+    @ResponseBody
+    @RequestMapping(value = "/getbattery", produces = "application/json;charset=utf-8")
+    public BatteryPack getBatteryData(HttpSession session) {
+        System.out.println("sss");
+        int id = (int)session.getAttribute("id");
+        System.out.println(id);
+        BatteryPack ret = new BatteryPack();
+        try {
+            ret = batteryPackFun.selectBatteryPackById(id);
+        } catch (NullException e) {
+            log.error(e.getMessage());
+        }
+        return ret;
+    }
 }

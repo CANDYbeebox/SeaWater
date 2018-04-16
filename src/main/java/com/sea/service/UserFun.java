@@ -1,9 +1,11 @@
 package com.sea.service;
 
+import com.sea.entity.CompanyEntity;
 import com.sea.entity.UserEntity;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -19,5 +21,7 @@ public interface UserFun {
     UserEntity getByUsername(String username);
 
     Set<String> getRoles(String username);
+
+    List<CompanyEntity> getCompany();
 
 }

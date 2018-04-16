@@ -38,7 +38,7 @@ public class WindElectricControl {
 
 
     @ResponseBody
-    @RequestMapping(value = "/one", produces = "application/text;charset=utf-8")
+    @RequestMapping(value = "/setone", produces = "application/text;charset=utf-8")
     public String setWindOne(WindElectricEntity w) {
 //        if (windElectricEntity == null) {
 //            log.error("对象为空");
@@ -169,7 +169,7 @@ public class WindElectricControl {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/two", produces = "application/text;charset=utf-8")
+    @RequestMapping(value = "/settwo", produces = "application/text;charset=utf-8")
     public String setWindTwo(WindEletricTwoEntity w) {
         log.info("输出为{}", w);
         windTwo.setId(w.getId());

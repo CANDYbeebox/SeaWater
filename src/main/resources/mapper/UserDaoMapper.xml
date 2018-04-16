@@ -15,4 +15,7 @@
         select r.rolename from user u,role r where u.role_id=r.id and u.username=#{username}
     </select>
 
+    <select id="getCompany" resultType="com.sea.entity.CompanyEntity">
+        SELECT * FROM company ORDER BY id;
+    </select>
 </mapper>

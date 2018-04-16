@@ -1,5 +1,6 @@
 package com.sea.service.Impl;
 
+import com.exception.NullException;
 import com.exception.updateException;
 import com.sea.dao.BatteryPackDao;
 import com.sea.entity.BatteryPack;
@@ -25,6 +26,10 @@ public class BatteryPackFunImpl implements BatteryPackFun{
 
     @Override
     public BatteryPack selectBatteryPackById(int id) {
-        return null;
+        BatteryPack b = bDao.selectBatteryPackById(id);
+        if (b == null) {
+            throw new NullException("没有id为" + id + "的电池组信息");
+        }
+        return b;
     }
 }

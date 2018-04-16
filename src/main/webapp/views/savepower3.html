@@ -4,8 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>储能机组</title>
-  <script src="../static/lib/sweet-alert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../static/lib/sweet-alert.css">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -48,10 +46,6 @@
       width: 100px;
       height: 100px;
       background: red;
-    }
-    .w{
-      width: 400px;
-      float:right;
     }
   </style>
 </head>
@@ -350,11 +344,11 @@
 
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header" style="font-size: large;text-align: center">选择菜单</li>
-        <li><a href="wind.html" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-purple"></i> <span>风电机组</span></a></li>
+        <li><a href="wind.jsp" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-purple"></i> <span>风电机组</span></a></li>
         <li><a href="savepower.html" style="text-align: center;font-size: large;color: floralwhite"><i class="fa fa-circle-o text-yellow"></i> <span>储能机组</span></a></li>
         <li><a href="desalination.html" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-gray"></i> <span>海淡设备</span></a></li>
-        <li><a href="" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-green"></i> <span>运行记录</span></a></li>
-        <li><a href="#" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-red"></i> <span>故障报警</span></a></li>
+        <li><a href="runningrecord.jsp" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-green"></i> <span>运行记录</span></a></li>
+        <li><a href="Faultalarm.jsp" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-red"></i> <span>故障报警</span></a></li>
         <li><a href="#" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-white"></i> <span>退出系统</span></a></li>
 
       </ul>
@@ -385,62 +379,60 @@
               <h3 class="box-title" ><strong>储能双向变流器</strong></h3>
             </div>
             <div class="box-body">
-
               <div class="box box-success">
                 <div class="box-header with-border" style="text-align: center">
                   <h3 class="box-title" >运行模式</h3>
                 </div>
                 <div class="box-body">
-                  <table class="table table-striped" style="text-align: center"  >
+                  <table class="table table-striped" style="text-align: center;"  >
                     <tbody>
                     <tr>
                       <td>EMS正在控制</td>
-                      <td > <div style="background: green;display: inherit" id="EMS正在控制">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>V/F模式</td>
-                      <td > <div style="background: green;display: inherit" id="V/F模式">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>开机状态</td>
-                      <td><div style="background: green;display: inherit" id="开机状态">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>P/Q模式</td>
-                      <td><div style="background: green;display: inherit" id="P/Q模式">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>正在调试</td>
-                      <td><div style="background: green;display: inherit" id="正在调试">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>均压维护模式</td>
-                      <td><div style="background: green;display: inherit" id="均压维护模式">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>停机状态</td>
-                      <td><div style="background: green;display: inherit" id="停机状态">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>恒压充放电模式</td>
-                      <td><div style="background: green;display: inherit" id="恒压充放电模式">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>故障锁定状态</td>
-                      <td><div style="background: green;display: inherit" id="故障锁定状态">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>SOC标定模式</td>
-                      <td><div style="background: green;display: inherit" id="SOC标定模式">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>过载保护</td>
-                      <td><div style="background: green;display: inherit" id="过载保护变流器">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>开关状态异常保护</td>
-                      <td><div style="background: green;display: inherit" id="开关状态异常保护">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td></td>
                       <td></td>
                       <td>电池维护模式</td>
-                      <td><div style="background: green;display: inherit" id="电池维护模式">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     </tbody>
                   </table>
 
                 </div>
               </div>
-
               <div class="box box-success">
                 <div class="box-header with-border" style="text-align: center">
                   <h3 class="box-title" >遥测数据</h3>
@@ -450,51 +442,51 @@
                     <tbody>
                     <tr>
                       <td>A相电压</td>
-                      <td id="A相电压"></td>
+                      <td></td>
                       <td>V</td>
                       <td>A相电流</td>
-                      <td id="A相电流"></td>
+                      <td></td>
                       <td>A</td>
 
                     </tr>
                     <tr>
                       <td>B相电压</td>
-                      <td id="B相电压"></td>
+                      <td></td>
                       <td>V</td>
                       <td>B相电流</td>
-                      <td id="B相电流"></td>
+                      <td></td>
                       <td>A</td>
                     </tr>
                     <tr>
                       <td>C相电压</td>
-                      <td id="C相电压"></td>
+                      <td></td>
                       <td>V</td>
                       <td>C相电流</td>
-                      <td id="C相电流"></td>
+                      <td></td>
                       <td>A</td>
                     </tr>
                     <tr>
                       <td>无功功率</td>
-                      <td id="无功功率"></td>
+                      <td></td>
                       <td>Var</td>
                       <td>直流电压值</td>
-                      <td id="直流电压值"></td>
+                      <td></td>
                       <td>V</td>
                     </tr>
                     <tr>
                       <td>有功功率</td>
-                      <td id="有功功率"></td>
+                      <td></td>
                       <td>kw</td>
                       <td>直流电流值</td>
-                      <td id="直流电流值"></td>
+                      <td></td>
                       <td>A</td>
                     </tr>
                     <tr>
                       <td>电网频率</td>
-                      <td id="电网频率"></td>
+                      <td></td>
                       <td>Hz</td>
                       <td>直流侧功率</td>
-                      <td id="直流侧功率"></td>
+                      <td></td>
                       <td>kw</td>
                     </tr>
 
@@ -503,7 +495,6 @@
 
                 </div>
               </div>
-
               <div class="box box-success">
                 <div class="box-header with-border" style="text-align: center">
                   <h3 class="box-title" >报警/故障</h3>
@@ -513,48 +504,49 @@
                     <tbody>
                     <tr>
                       <td>交流过流保护</td>
-                      <td> <div id="交流过流保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>直流过压保护</td>
-                      <td> <div id="直流过压保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>交流过压保护</td>
-                      <td><div id="交流过压保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>直流欠压保护</td>
-                      <td><div id="直流欠压保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>交流欠压保护</td>
-                      <td><div id="交流欠压保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>内部短路保护</td>
-                      <td><div id="内部短路保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>交流过频保护</td>
-                      <td><div id="交流过频保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>直流极性反接保护</td>
-                      <td><div id="直流极性反接保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>交流欠频保护</td>
-                      <td><div id="交流欠频保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>相序错误保护</td>
-                      <td><div id="相序错误保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>过载保护</td>
-                      <td><div id="过载保护电池组" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>开关状态异常保护</td>
                       <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>绝缘保护</td>
-                      <td><div id="绝缘保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>响应BMS故障停机</td>
-                      <td><div id="响应BMS故障停机" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     </tbody>
                   </table>
+
                 </div>
               </div>
 
@@ -568,27 +560,26 @@
               <h3 class="box-title" ><strong>电池组</strong></h3>
             </div>
             <div class="box-body">
-
               <div class="box box-success">
                 <div class="box-header with-border" style="text-align: center">
                   <h3 class="box-title" >系统状态</h3>
                 </div>
-                <div class="box-body" style="height: 3cm">
+                <div class="box-body" style="height: 5cm">
                   <div class="row">
                     <div class="col-xs-4">
                       <table class="table table-striped" style="text-align: center;"  >
                         <tbody>
                         <tr>
                           <td>远程</td>
-                          <td > <div id="远程" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                          <td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                         </tr>
                         <tr>
                           <td>就地</td>
-                          <td><div id="就地" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                          <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                         </tr>
                         <tr>
                           <td>维护</td>
-                          <td><div id="维护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                          <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                         </tr>
                         </tbody>
                       </table>
@@ -598,11 +589,11 @@
                         <tbody>
                         <tr>
                           <td>运行</td>
-                          <td > <div id="运行" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                          <td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                         </tr>
                         <tr>
                           <td>均衡</td>
-                          <td><div id="均衡" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                          <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                         </tr>
                         <tr>
                           <td></td>
@@ -616,11 +607,11 @@
                         <tbody>
                         <tr>
                           <td>报警</td>
-                          <td > <div id="报警" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                          <td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                         </tr>
                         <tr>
                           <td>故障</td>
-                          <td><div id="故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                          <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                         </tr>
                         <tr>
                           <td></td>
@@ -642,33 +633,33 @@
                     <tbody>
                     <tr>
                       <td>电池充满报警</td>
-                      <td> <div id="电池充满报警" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>电流报警</td>
-                      <td ><div id="电流报警" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>电池放空报警</td>
-                      <td><div id="电池放空报警" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>温度报警</td>
-                      <td><div id="温度报警" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>电池充满故障</td>
-                      <td><div id="电池充满故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>温度故障</td>
-                      <td><div id="温度故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>电池放空故障</td>
-                      <td><div id="电池放空故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>电流故障</td>
-                      <td><div id="电流故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>BMS内部故障</td>
-                      <td><div id="BMS内部故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>BMS通讯故障</td>
-                      <td><div id="BMS通讯故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     </tbody>
                   </table>
@@ -676,6 +667,83 @@
                 </div>
               </div>
 
+            </div>
+
+
+
+          </div>
+
+          <img src="../static/pic/savepower.png" style="position:absolute; left:50px;top:600px;">
+        </div>
+        <div class="col-xs-4">
+          <div class="box box-primary">
+            <div class="box-header with-border" style="text-align: center">
+              <h3 class="box-title" ><strong>电池组</strong></h3>
+            </div>
+            <div class="box-body">
+              <!--<div class="box box-success">-->
+              <!--<div class="box-header with-border" style="text-align: center">-->
+              <!--<h3 class="box-title" >系统状态</h3>-->
+              <!--</div>-->
+              <!--<div class="box-body" style="height: 3cm">-->
+              <!--<div class="row">-->
+              <!--<div class="col-xs-4">-->
+              <!--<table class="table table-striped" style="text-align: center;"  >-->
+              <!--<tbody>-->
+              <!--<tr>-->
+              <!--<td>远程</td>-->
+              <!--<td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+              <!--<td>就地</td>-->
+              <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+              <!--<td>维护</td>-->
+              <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--</tr>-->
+              <!--</tbody>-->
+              <!--</table>-->
+              <!--</div>-->
+              <!--<div class="col-xs-4">-->
+              <!--<table class="table table-striped" style="text-align: center;"  >-->
+              <!--<tbody>-->
+              <!--<tr>-->
+              <!--<td>运行</td>-->
+              <!--<td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+              <!--<td>均衡</td>-->
+              <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+              <!--<td></td>-->
+              <!--<td><div style="background: green;display: inherit"></div></td>-->
+              <!--</tr>-->
+              <!--</tbody>-->
+              <!--</table>-->
+              <!--</div>-->
+              <!--<div class="col-xs-4">-->
+              <!--<table class="table table-striped" style="text-align: center;"  >-->
+              <!--<tbody>-->
+              <!--<tr>-->
+              <!--<td>报警</td>-->
+              <!--<td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+              <!--<td>故障</td>-->
+              <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+              <!--<td></td>-->
+              <!--<td><div style="background: green;display: inherit"></div></td>-->
+              <!--</tr>-->
+              <!--</tbody>-->
+              <!--</table>-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--</div>-->
               <div class="box box-success">
                 <div class="box-header with-border" style="text-align: center">
                   <h3 class="box-title" >电池组遥测量</h3>
@@ -726,22 +794,6 @@
 
                 </div>
               </div>
-
-            </div>
-
-
-
-          </div>
-
-          <!--<img src="../static/pic/savepower.png" style="position:absolute; left:50px;top:400px;">-->
-        </div>
-        <div class="col-xs-4">
-          <div class="box box-primary">
-            <div class="box-header with-border" style="text-align: center">
-              <h3 class="box-title" ><strong>电池组</strong></h3>
-            </div>
-            <div class="box-body">
-
 
               <div class="box box-success">
                 <div class="box-header with-border" style="text-align: center">
@@ -870,49 +922,50 @@
                     </tr>
                     </tbody>
                   </table>
+
                 </div>
               </div>
               <!--<div class="box box-success">-->
-                <!--<div class="box-header with-border" style="text-align: center">-->
-                  <!--<h3 class="box-title" >报警/故障</h3>-->
-                <!--</div>-->
-                <!--<div class="box-body">-->
-                  <!--<table class="table table-striped" style="text-align: center;"  >-->
-                    <!--<tbody>-->
-                    <!--<tr>-->
-                      <!--<td>电池充满报警</td>-->
-                      <!--<td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
-                      <!--<td>电流报警</td>-->
-                      <!--<td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                      <!--<td>电池放空报警</td>-->
-                      <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
-                      <!--<td>温度报警</td>-->
-                      <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                      <!--<td>电池充满故障</td>-->
-                      <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
-                      <!--<td>温度故障</td>-->
-                      <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                      <!--<td>电池放空故障</td>-->
-                      <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
-                      <!--<td>电流故障</td>-->
-                      <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                      <!--<td>BMS内部故障</td>-->
-                      <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
-                      <!--<td>BMS通讯故障</td>-->
-                      <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
-                    <!--</tr>-->
-                    <!--</tbody>-->
-                  <!--</table>-->
+              <!--<div class="box-header with-border" style="text-align: center">-->
+              <!--<h3 class="box-title" >报警/故障</h3>-->
+              <!--</div>-->
+              <!--<div class="box-body">-->
+              <!--<table class="table table-striped" style="text-align: center;"  >-->
+              <!--<tbody>-->
+              <!--<tr>-->
+              <!--<td>电池充满报警</td>-->
+              <!--<td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--<td>电流报警</td>-->
+              <!--<td > <div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+              <!--<td>电池放空报警</td>-->
+              <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--<td>温度报警</td>-->
+              <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+              <!--<td>电池充满故障</td>-->
+              <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--<td>温度故障</td>-->
+              <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+              <!--<td>电池放空故障</td>-->
+              <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--<td>电流故障</td>-->
+              <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+              <!--<td>BMS内部故障</td>-->
+              <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--<td>BMS通讯故障</td>-->
+              <!--<td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+              <!--</tr>-->
+              <!--</tbody>-->
+              <!--</table>-->
 
-                <!--</div>-->
+              <!--</div>-->
               <!--</div>-->
 
             </div>
@@ -1179,8 +1232,5 @@
 <script src="../static/echarts-master/test/lib/facePrint.js"></script>
 <script src="../static/echarts-master/test/lib/testHelper.js"></script>
 <script src="../static/js/line.js"></script>
-
-<!--自己写的js-->
-<script src="../static/js/savepower.js"></script>
 </body>
 </html>
