@@ -40,11 +40,6 @@ public class WindElectricControl {
     @ResponseBody
     @RequestMapping(value = "/setone", produces = "application/text;charset=utf-8")
     public String setWindOne(WindElectricEntity w) {
-//        if (windElectricEntity == null) {
-//            log.error("对象为空");
-//            return "空对象";
-//        }
-//        log.info("输出为{}", windElectricEntity);
         log.info("输出为{}", w);
         windOne.setId(w.getId());
         if (w.getWindturb1_40007() != null) {

@@ -349,11 +349,9 @@ public class EnergyStorageControl {
         return "success";
     }
 
-
     @ResponseBody
     @RequestMapping(value = "/getbattery", produces = "application/json;charset=utf-8")
     public BatteryPack getBatteryData(HttpSession session) {
-        System.out.println("sss");
         int id = (int)session.getAttribute("id");
         System.out.println(id);
         BatteryPack ret = new BatteryPack();

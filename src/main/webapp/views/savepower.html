@@ -41,6 +41,11 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <style>
+    td{
+      text-align: center;
+      vertical-align:middle;
+    }
+
     fieldset{padding:.35em .625em .75em;margin:0 2px;border:1px solid silver}
 
     legend{padding:.5em;border:0;width:auto}
@@ -356,7 +361,6 @@
         <li><a href="" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-green"></i> <span>运行记录</span></a></li>
         <li><a href="#" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-red"></i> <span>故障报警</span></a></li>
         <li><a href="#" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-white"></i> <span>退出系统</span></a></li>
-
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -397,13 +401,13 @@
                       <td>EMS正在控制</td>
                       <td > <div style="background: green;display: inherit" id="EMS正在控制">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>V/F模式</td>
-                      <td > <div style="background: green;display: inherit" id="V/F模式">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td > <div style="background: green;display: inherit" id="VF模式">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>开机状态</td>
                       <td><div style="background: green;display: inherit" id="开机状态">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>P/Q模式</td>
-                      <td><div style="background: green;display: inherit" id="P/Q模式">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div style="background: green;display: inherit" id="PQ模式">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>正在调试</td>
@@ -422,12 +426,6 @@
                       <td><div style="background: green;display: inherit" id="故障锁定状态">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>SOC标定模式</td>
                       <td><div style="background: green;display: inherit" id="SOC标定模式">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
-                    </tr>
-                    <tr>
-                      <td>过载保护</td>
-                      <td><div style="background: green;display: inherit" id="过载保护变流器">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
-                      <td>开关状态异常保护</td>
-                      <td><div style="background: green;display: inherit" id="开关状态异常保护">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td></td>
@@ -543,9 +541,15 @@
                     </tr>
                     <tr>
                       <td>过载保护</td>
-                      <td><div id="过载保护电池组" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="报警故障过载保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>开关状态异常保护</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="报警故障开关状态异常保护" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                    </tr>
+                    <tr>
+                      <td>过载保护</td>
+                      <td><div style="background: green;display: inherit" id="过载保护">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td>开关状态异常保护</td>
+                      <td><div style="background: green;display: inherit" id="开关状态异常保护">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>绝缘保护</td>
@@ -562,6 +566,8 @@
           </div>
 
         </div>
+
+
         <div class="col-xs-4">
           <div class="box box-primary">
             <div class="box-header with-border" style="text-align: center">
@@ -573,18 +579,24 @@
                 <div class="box-header with-border" style="text-align: center">
                   <h3 class="box-title" >系统状态</h3>
                 </div>
-                <div class="box-body" style="height: 3cm">
-                  <div class="row">
-                    <div class="col-xs-4">
+                <div class="box-body" style="">
                       <table class="table table-striped" style="text-align: center;"  >
                         <tbody>
                         <tr>
                           <td>远程</td>
                           <td > <div id="远程" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                          <td>运行</td>
+                          <td > <div id="运行" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                          <td>报警</td>
+                          <td > <div id="报警" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                         </tr>
                         <tr>
                           <td>就地</td>
                           <td><div id="就地" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                          <td>均衡</td>
+                          <td><div id="均衡" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                          <td>故障</td>
+                          <td><div id="故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                         </tr>
                         <tr>
                           <td>维护</td>
@@ -592,53 +604,52 @@
                         </tr>
                         </tbody>
                       </table>
-                    </div>
-                    <div class="col-xs-4">
-                      <table class="table table-striped" style="text-align: center;"  >
-                        <tbody>
-                        <tr>
-                          <td>运行</td>
-                          <td > <div id="运行" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
-                        </tr>
-                        <tr>
-                          <td>均衡</td>
-                          <td><div id="均衡" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td><div style="background: green;display: inherit"></div></td>
-                        </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="col-xs-4">
-                      <table class="table table-striped" style="text-align: center;"  >
-                        <tbody>
-                        <tr>
-                          <td>报警</td>
-                          <td > <div id="报警" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
-                        </tr>
-                        <tr>
-                          <td>故障</td>
-                          <td><div id="故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td><div style="background: green;display: inherit"></div></td>
-                        </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                    <!--<div class="col-xs-4">-->
+                      <!--<table class="table table-striped" style="text-align: center;"  >-->
+                        <!--<tbody>-->
+                        <!--<tr>-->
+                          <!--<td>运行</td>-->
+                          <!--<td > <div id="运行" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                          <!--<td>均衡</td>-->
+                          <!--<td><div id="均衡" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+                        <!--</tr>-->
+                        <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<td></td>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<td><div style="background: green;display: inherit"></div></td>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+                        <!--</tbody>-->
+                      <!--</table>-->
+                    <!--</div>-->
+                    <!--<div class="col-xs-4">-->
+                      <!--<table class="table table-striped" style="text-align: center;"  >-->
+                        <!--<tbody>-->
+                        <!--<tr>-->
+                          <!--<td>报警</td>-->
+                          <!--<td > <div id="报警" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                          <!--<td>故障</td>-->
+                          <!--<td><div id="故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>-->
+                        <!--</tr>-->
+                        <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<td></td>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<td><div style="background: green;display: inherit"></div></td>&ndash;&gt;-->
+                        <!--</tr>-->
+                        <!--</tbody>-->
+                      <!--</table>-->
+                    <!--</div>-->
                 </div>
               </div>
-
+              <br>
+              <br>
               <div class="box box-success">
                 <div class="box-header with-border" style="text-align: center">
                   <h3 class="box-title" >报警/故障</h3>
                 </div>
                 <div class="box-body">
-                  <table class="table table-striped" style="text-align: center;"  >
+                  <table class="table table-striped" style="text-align: center;height: 255px"  >
                     <tbody>
                     <tr>
                       <td>电池充满报警</td>
@@ -675,7 +686,8 @@
 
                 </div>
               </div>
-
+              <br>
+              <br>
               <div class="box box-success">
                 <div class="box-header with-border" style="text-align: center">
                   <h3 class="box-title" >电池组遥测量</h3>
@@ -683,44 +695,44 @@
                 <div class="box-body">
                   <div class="progress-group">
                     <span class="progress-text">电压V</span>
-                    <span class="progress-number"><b style="color: tomato">160</b>/[0-200]</span>
+                    <span class="progress-number"><b style="color: tomato" id="遥测量电压">160</b>/[0-200]</span>
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                      <div class="progress-bar progress-bar-aqua" style="width: 80%" id="遥测量电压长度"></div>
                     </div>
                   </div>
                   <div class="progress-group">
                     <span class="progress-text">电流A</span>
-                    <span class="progress-number"><b style="color: tomato">160</b>/[-300-200]</span>
+                    <span class="progress-number"><b style="color: tomato" id="遥测量电流">160</b>/[-300-200]</span>
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                      <div class="progress-bar progress-bar-aqua" style="width: 80%" id="遥测量电流长度"></div>
                     </div>
                   </div>
                   <div class="progress-group">
                     <span class="progress-text">SOC%</span>
-                    <span class="progress-number"><b style="color: tomato">80</b>/100</span>
+                    <span class="progress-number"><b style="color: tomato" id="遥测量SOC">80</b>/[0-100]</span>
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                      <div class="progress-bar progress-bar-aqua" style="width: 80%" id="遥测量SOC长度"></div>
                     </div>
                   </div>
                   <div class="progress-group">
                     <span class="progress-text">SOH%</span>
-                    <span class="progress-number"><b style="color: tomato">80</b>/100</span>
+                    <span class="progress-number"><b style="color: tomato" id="遥测量SOH">80</b>/[0-100]</span>
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                      <div class="progress-bar progress-bar-aqua" style="width: 80%" id="遥测量SOH长度"></div>
                     </div>
                   </div>
                   <div class="progress-group">
                     <span class="progress-text">可充kWh</span>
-                    <span class="progress-number"><b style="color: tomato">160</b>/400</span>
+                    <span class="progress-number"><b style="color: tomato" id="遥测量可充kWh">160</b>/[0-400]</span>
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                      <div class="progress-bar progress-bar-aqua" style="width: 80%" id="遥测量可充kWh长度"></div>
                     </div>
                   </div>
                   <div class="progress-group">
                     <span class="progress-text">可放kWh</span>
-                    <span class="progress-number"><b style="color: tomato">160</b>/400</span>
+                    <span class="progress-number"><b style="color: tomato" id="遥测量可放kWh">160</b>/[0-400]</span>
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                      <div class="progress-bar progress-bar-aqua" style="width: 80%" id="遥测量可放kWh长度"></div>
                     </div>
                   </div>
 
@@ -748,7 +760,7 @@
                   <h3 class="box-title" >1#电池组</h3>
                 </div>
                 <div class="box-body">
-                  <table class="table table-striped" style="text-align: center">
+                  <table class="table table-striped" style="text-align: center;height: 200px">
                     <tbody>
                     <tr>
                       <td>电压</td>
@@ -780,12 +792,15 @@
 
                 </div>
               </div>
+              <br>
+              <br>
+
               <div class="box box-success">
                 <div class="box-header with-border" style="text-align: center">
                   <h3 class="box-title" >2#电池组</h3>
                 </div>
                 <div class="box-body">
-                  <table class="table table-striped" style="text-align: center">
+                  <table class="table table-striped" style="text-align: center;height: 200px">
                     <tbody>
                     <tr>
                       <td>电压</td>
@@ -817,56 +832,42 @@
 
                 </div>
               </div>
+              <br>
+              <br>
+
               <div class="box box-success">
                 <div class="box-body">
-                  <table class="table table-striped" style="text-align: center">
+                  <table class="table table-striped" style="text-align: center;height: 300px">
                     <tbody>
-                    <tr>
-                      <td>单体高压</td>
-                      <td></td>
+                    <tr style="vertical-align: middle">
+                      <td >单体高压</td>
                       <td id="单体高压"></td>
-                      <td></td>
                       <td>V</td>
-                      <td>电流</td>
-                      <td></td>
-                      <td id="电流3"></td>
-                      <td></td>
-                      <td>A</td>
-
+                      <td>单体低压</td>
+                      <td id="单体低压"></td>
+                      <td>V</td>
                     </tr>
                     <tr>
                       <td>单体高压号</td>
-                      <td id="单体高压号模组"></td>
-                      <td>模组</td>
-                      <td id="单体高压号电芯"></td>
-                      <td>电芯</td>
+                      <td id="单体高压号"colspan="5"></td>
+                    </tr>
+                    <tr>
                       <td>单体低压号</td>
-                      <td id="单体低压号模组"></td>
-                      <td>模组</td>
-                      <td id="单体低压号电芯"></td>
-                      <td>电芯</td>
+                      <td id="单体低压号"colspan="5"></td>
                     </tr>
                     <tr>
                       <td>单体高温</td>
-                      <td></td>
                       <td id="单体高温"></td>
-                      <td></td>
                       <td>℃</td>
                       <td>单体低温</td>
-                      <td></td>
                       <td id="单体低温"></td>
-                      <td></td>
                       <td>℃</td>
                     </tr>
                     <tr>
                       <td>单体高温编号</td>
-                      <td></td>
-                      <td id="单体高温编号"></td>
-                      <td></td>
-                      <td></td>
+                      <td id="单体高温编号" colspan="2"></td>
                       <td>单体低温编号</td>
-                      <td></td>
-                      <td id="单体低温编号"></td>
+                      <td id="单体低温编号" colspan="2"></td>
                     </tr>
                     </tbody>
                   </table>

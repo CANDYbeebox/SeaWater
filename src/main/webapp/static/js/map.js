@@ -44,6 +44,7 @@ function showMarker() {
         url: '../user/companygetter',
         dataType:"json",
         success: function(data) {
+            // alert(JSON.stringify(data));
             if($.isEmptyObject(data)) {
                 alertWindow("没有符合条件的数据", error);
             } else {

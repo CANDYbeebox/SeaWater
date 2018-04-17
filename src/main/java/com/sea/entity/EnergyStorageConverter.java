@@ -37,6 +37,7 @@ public class EnergyStorageConverter {
     private String pcsAdd2012Bit12Val3;
     private String pcsAdd2012Bit12Val4;
     private String pcsAdd2012Bit12Val5;
+
     private String pcsAdd2014Bit0;
     private String pcsAdd2014Bit1;
     private String pcsAdd2014Bit2;
