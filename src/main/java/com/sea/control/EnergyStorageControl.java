@@ -194,7 +194,10 @@ public class EnergyStorageControl {
     @RequestMapping(value = "/getenergystorage", produces = "application/json;charset=utf-8")
     public EnergyStorageConverter getEnergyData(HttpSession session) {
         EnergyStorageConverter ret = new EnergyStorageConverter();
-        int id = (int)session.getAttribute("id");
+        int id = 0;
+        if (session.getAttribute("id") != null) {
+            id = (int)session.getAttribute("id");
+        }
         try {
             ret = energyStorage.selectEnergyStorageById(id);
             System.out.println(ret);
@@ -352,7 +355,10 @@ public class EnergyStorageControl {
     @ResponseBody
     @RequestMapping(value = "/getbattery", produces = "application/json;charset=utf-8")
     public BatteryPack getBatteryData(HttpSession session) {
-        int id = (int)session.getAttribute("id");
+        int id = 0;
+        if (session.getAttribute("id") != null) {
+            id = (int)session.getAttribute("id");
+        }
         System.out.println(id);
         BatteryPack ret = new BatteryPack();
         try {

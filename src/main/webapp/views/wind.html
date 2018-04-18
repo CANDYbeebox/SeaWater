@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>风电机组</title>
+  <script src="../static/lib/sweet-alert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../static/lib/sweet-alert.css">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -450,43 +452,74 @@
         <div class="col-xs-6">
           <fieldset style="font-size: small">
             <p style="color: deepskyblue;font-size: large">一号机组运行状态</p>
-            &nbsp&nbsp就地控制 <div id='就地控制1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp远程控制 <div id='远程控制1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp手动模式 <div id='手动模式1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp自动模式 <div id='自动模式1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp维护模式 <div id='维护模式1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp停机模式 <div id='停机模式1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            <br>
-            &nbsp&nbsp启动 <div id='启动1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp运行 <div id='运行1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp暂停 <div id='暂停1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp停机 <div id='停机1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp急停 <div id='急停1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp空转 <div id='空转1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            <br>
-            <br>
+            <table class="table table-striped" style="text-align: center;"  >
+              <tbody>
+              <tr>
+                <td>就地控制</td>
+                <td > <div id="就地控制1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>远程控制</td>
+                <td > <div id="远程控制1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>手动模式</td>
+                <td > <div id="手动模式1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>自动模式</td>
+                <td > <div id="自动模式1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>维护模式</td>
+                <td > <div id="维护模式1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>停机模式</td>
+                <td > <div id="停机模式1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+              </tr>
+              <tr>
+                <td>启动</td>
+                <td><div id="启动1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>运行</td>
+                <td><div id="运行1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>暂停</td>
+                <td><div id="暂停1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>停机</td>
+                <td><div id="停机1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>急停</td>
+                <td><div id="急停1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>空转</td>
+                <td><div id="空转1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+              </tr>
+              </tbody>
+            </table>
             <p style="color: deepskyblue;font-size: large">一号机组故障报警</p>
             <div class="row">
               <div class="col-xs-2">
                 <img src="../static/pic/alarmLight.png" height="50px">
               </div>
               <div class="col-xs-9">
-                &nbsp&nbsp通讯故障 &nbsp&nbsp&nbsp<div id='通讯故障1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                &nbsp&nbsp电机超速 &nbsp&nbsp&nbsp&nbsp<div id='电机超速1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                &nbsp&nbsp直流过压 &nbsp&nbsp&nbsp<div id='直流过压1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                <br>
-                &nbsp&nbsp变桨故障 &nbsp&nbsp&nbsp<div id='变桨故障1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                &nbsp&nbsp电机故障 &nbsp&nbsp&nbsp&nbsp<div id='电机故障1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                &nbsp&nbsp偏航故障 &nbsp&nbsp&nbsp<div id='偏航故障1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                <br>
-                &nbsp&nbsp逆变器故障 <div id='逆变器故障1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                &nbsp&nbsp安全链故障 <div id='安全链故障1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                &nbsp&nbsp大风报警&nbsp&nbsp &nbsp<div id='大风报警1' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-
+                <table class="table table-striped" style="text-align: center;"  >
+                  <tbody>
+                  <tr>
+                    <td>通讯故障</td>
+                    <td > <div id="通讯故障1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                    <td>电机超速</td>
+                    <td > <div id="电机超速1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                    <td>直流过压</td>
+                    <td > <div id="直流过压1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                  </tr>
+                  <tr>
+                    <td>变桨故障</td>
+                    <td><div id="变桨故障1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                    <td>电机故障</td>
+                    <td><div id="电机故障1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                    <td>偏航故障</td>
+                    <td><div id="偏航故障1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                  </tr>
+                  <tr>
+                    <td>逆变器故障</td>
+                    <td><div id="逆变器故障1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                    <td>安全链故障</td>
+                    <td><div id="安全链故障1" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                    <td>大风报警</td>
+                    <td><div id="大风报警" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                  </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-
-
           </fieldset>
 
 
@@ -509,43 +542,39 @@
             <tbody>
             <tr>
               <td >风向（度）</td>
-              <td > </td>
-              <!--<td>电网电压U（V)</td>-->
-              <!--<td width="50">A+</td>-->
+              <td id="风向2"> </td>
             </tr>
             <tr>
               <td>风速（m/s)</td>
-              <td >Smita</td>
-              <!--<td>电网电压V（V）</td>-->
-              <!--<td width="50">A</td>-->
+              <td id="风速2"></td>
             </tr>
             <tr>
               <td>转速（r/min）</td>
-              <td >Rabindranath</td>
+              <td id="转速2"></td>
             </tr>
             <tr>
               <td>电网电压（V）</td>
-              <td >Rabindranath</td>
+              <td id="电网电压2"></td>
             </tr>
             <tr>
               <td>电网电流（A）</td>
-              <td >Rabindranath</td>
+              <td id="电网电流2"></td>
             </tr>
             <tr>
               <td>有功功率（kw）</td>
-              <td >Rabindranath</td>
+              <td id="有功功率2"></td>
             </tr>
             <tr>
               <td>无功功率（kar）</td>
-              <td >Rabindranath</td>
+              <td id="无功功率2"></td>
             </tr>
             <tr>
               <td>电网频率（Hz）</td>
-              <td >Rabindranath</td>
+              <td id="电网频率2"></td>
             </tr>
             <tr>
               <td>累计发电量（kwh）</td>
-              <td >Rabindranath</td>
+              <td id="累计发电量2"></td>
             </tr>
             </tbody>
           </table>
@@ -555,29 +584,57 @@
         <div class="col-xs-6">
           <fieldset style="font-size: small">
             <p style="color: deepskyblue;font-size: large">二号机组运行状态</p>
-            &nbsp&nbsp就地控制 <div id='就地控制2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp远程控制 <div id='远程控制2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp手动控制 <div id='手动控制2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp自动控制 <div id='自动控制2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp变流器待机 <div id='变流器待机2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            <br>
-            &nbsp&nbsp运行状态 <div id='运行状态2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            &nbsp&nbsp停机状态 <div id='停机状态2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-            <br>
-            <br>
+            <table class="table table-striped" style="text-align: center;"  >
+              <tbody>
+              <tr>
+                <td>就地控制</td>
+                <td > <div id="就地控制2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>远程控制</td>
+                <td > <div id="远程控制2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>手动模式</td>
+                <td > <div id="手动模式2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>自动模式</td>
+                <td > <div id="自动模式2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>变流器待机</td>
+                <td > <div id="变流器待机2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+              </tr>
+              <tr>
+                <td>运行状态 </td>
+                <td><div id="运行状态2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                <td>停机状态</td>
+                <td><div id="停机状态2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+              </tr>
+              </tbody>
+            </table>
+
             <p style="color: deepskyblue;font-size: large">二号机组故障报警</p>
             <div class="row">
               <div class="col-xs-2">
                 <img src="../static/pic/alarmLight.png" height="50px">
               </div>
-              <div class="col-xs-9">
-                &nbsp&nbsp通讯故障 &nbsp&nbsp&nbsp<div id='通讯故障2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                &nbsp&nbsp电机超速 &nbsp&nbsp&nbsp&nbsp<div id='电机超速2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                &nbsp&nbsp大风报警&nbsp&nbsp &nbsp<div id='大风报警2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                &nbsp&nbsp变桨故障 &nbsp&nbsp&nbsp<div id='变桨故障2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                &nbsp&nbsp偏航故障 &nbsp&nbsp&nbsp<div id='偏航故障2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                &nbsp&nbsp逆变器故障 <div id='逆变器故障2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-                &nbsp&nbsp电机故障 &nbsp&nbsp&nbsp&nbsp<div id='电机故障2' style="display: inline;background: #42de1c" >&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+              <div class="col-xs-10">
+                <table class="table table-striped" style="text-align: center;"  >
+                  <tbody>
+                  <tr>
+                    <td>通讯故障</td>
+                    <td > <div id="通讯故障2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                    <td>电机超速</td>
+                    <td > <div id="电机超速2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                    <td>大风报警</td>
+                    <td > <div id="大风报警2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                    <td>变桨故障</td>
+                    <td > <div id="变桨故障2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                  </tr>
+                  <tr>
+                    <td>偏航故障</td>
+                    <td><div id="偏航故障2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                    <td>逆变器故障</td>
+                    <td > <div id="逆变器故障2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                    <td>电机故障</td>
+                    <td><div id="电机故障2" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                  </tr>
+                  </tbody>
+                </table>
 
               </div>
             </div>
@@ -840,6 +897,12 @@
 <!--<script src="../static/echarts-master/test/lib/jquery.min.js"></script>-->
 <script src="../static/echarts-master/test/lib/facePrint.js"></script>
 <script src="../static/echarts-master/test/lib/testHelper.js"></script>
-<script src="../static/js/line.js"></script>
+<!--曲线-->
+<!--<script src="../static/js/line.js"></script>-->
+<!--src-->
+<!--弹窗-->
+<script src="../static/js/alertWindow.js"></script>
+<script src="../static/js/wind.js"></script>
+
 </body>
 </html>

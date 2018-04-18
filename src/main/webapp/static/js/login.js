@@ -34,14 +34,14 @@ $('#login').click(function(){
 });
 
 
-function alertWindow(text,type){
-    swal({
-        title:"",
-        text:text,
-        type:type,
-        animation:"slide-from-top",
-        allowOutsideClick:true,
-        timer:3000
-    }, function() {
-    });
-}
+// function alertWindow(text,type){
+//     swal({
+//         title:"",
+//         text:text,
+//         type:type,
+//         animation:"slide-from-top",
+//         allowOutsideClick:true,
+//         timer:3000
+//     }, function() {
+//     });
+// }

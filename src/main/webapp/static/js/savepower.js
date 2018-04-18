@@ -4,25 +4,11 @@
 var flagConverter;
 var flagBattery;
 
-function alertWindow(text, type) {
-    swal({
-        title: "",
-        text: text,
-        type: type,
-        animation: "slide-from-top",
-        allowOutsideClick: true,
-        timer: 1000
-    }, function () {
-    });
-}
 
-$(document).ready(function () {
-    // $("#遥测量电压").html("ffff");
-    // $("#遥测量电压长度").css({"width":"100%"});
-
+// $(document).ready(function () {
     flagConverter = setInterval(selectConverter, 1000);
     flagBattery = setInterval(selectBattery, 1000);
-});
+// });
 
 function selectConverter() {
     $.ajax({
@@ -30,10 +16,10 @@ function selectConverter() {
         url: '../savepower/getenergystorage',
         dataType: "json",
         success: function (result) {
-            console.log(JSON.stringify(result));
             if (result.id == 0) {
                 alertWindow("未检测到变流器数据", "error");
                 clearInterval(flagConverter);
+                setTimeout("window.location.href='map.html'", 5000);
             } else {
                 setHtmlConverter(result);
             }
@@ -205,7 +191,8 @@ function selectBattery() {
             console.log(JSON.stringify(result));
             if (result.id == 0) {
                 alertWindow("未检测到电池组数据", "error");
-                clearInterval(flagConverter);
+                clearInterval(flagBattery);
+                setTimeout("window.location.href='map.html'", 5000);
             } else {
                 setHtmlBattery(result);
             }

@@ -1,5 +1,6 @@
 package com.sea.control;
 
+import com.exception.NullException;
 import com.sea.entity.WindElectricEntity;
 import com.sea.entity.WindEletricTwoEntity;
 import com.sea.service.Wind;
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by try on 2018/3/6.
@@ -27,11 +30,11 @@ public class WindElectricControl {
             "1", "1", "1", "1", "1",
             "1", "1");
 
-    WindEletricTwoEntity windTwo = new WindEletricTwoEntity(1,"1","1","1","1",
-            "1","1","1","1","1",
-            "1", "1","1","1","1",
-            "1","1","1","1","1",
-            "1","1","1","1");
+    WindEletricTwoEntity windTwo = new WindEletricTwoEntity(1, "1", "1", "1", "1",
+            "1", "1", "1", "1", "1",
+            "1", "1", "1", "1", "1",
+            "1", "1", "1", "1", "1",
+            "1", "1", "1", "1");
 
     @Autowired
     Wind wind;
@@ -164,6 +167,23 @@ public class WindElectricControl {
     }
 
     @ResponseBody
+    @RequestMapping(value = "/getone", produces = "application/json;charset=utf-8")
+    public WindElectricEntity getWindOne(HttpSession session) {
+        int id = 0;
+        if (session.getAttribute("id") != null) {
+            id = (int)session.getAttribute("id");
+        }
+        WindElectricEntity ret = new WindElectricEntity();
+        try {
+            ret = wind.selectById(id);
+            System.out.println(ret);
+        } catch (NullException e) {
+            log.error(e.getMessage());
+        }
+        return ret;
+    }
+
+    @ResponseBody
     @RequestMapping(value = "/settwo", produces = "application/text;charset=utf-8")
     public String setWindTwo(WindEletricTwoEntity w) {
         log.info("输出为{}", w);
@@ -229,4 +249,20 @@ public class WindElectricControl {
         return "风机2更新成功";
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/gettwo", produces = "application/json;charset=utf-8")
+    public WindEletricTwoEntity getWindTwo(HttpSession session) {
+        int id = 0;
+        if (session.getAttribute("id") != null) {
+            id = (int)session.getAttribute("id");
+        }
+        WindEletricTwoEntity ret = new WindEletricTwoEntity();
+        try {
+            ret = wind.selectWindTwoById(id);
+            System.out.println(ret);
+        } catch (NullException e) {
+            log.error(e.getMessage());
+        }
+        return ret;
+    }
 }
