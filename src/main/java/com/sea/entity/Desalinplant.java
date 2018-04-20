@@ -20,7 +20,7 @@ public class Desalinplant {
     private String desalinplantAdd1014;
     private String desalinplantAdd1015;
     private String desalinplantAdd1016;
-    private String desalinplantAdd1018;
+    private String desalinplantAdd1018;//
     //海水淡
     private String desalinplantAdd1002Bit0Val0;
     private String desalinplantAdd1002Bit0Val1;
@@ -34,7 +34,7 @@ public class Desalinplant {
     private String desalinplantAdd1001Bit7;
     private String desalinplantAdd1003Bit0;
     private String desalinplantAdd1003Bit1;
-    private String desalinplantAdd1003Bit2;
+    private String desalinplantAdd1003Bit2;//
     private String desalinplantAdd1003Bit3;
     private String desalinplantAdd1003Bit4;
     private String desalinplantAdd1003Bit5;

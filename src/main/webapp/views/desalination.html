@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>海淡设备</title>
+  <script src="../static/lib/sweet-alert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../static/lib/sweet-alert.css">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -53,7 +55,7 @@
 <div class="wrapper">
   <header class="main-header">
     <!-- Logo -->
-    <a href="../static/adminLTE/index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <!--<span class="logo-mini"><b>A</b>LT</span>-->
       <!-- logo for regular state and mobile devices -->
@@ -344,6 +346,7 @@
 
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header" style="font-size: large;text-align: center">选择菜单</li>
+        <li><a href="map.html" style="text-align: center;font-size: large"><i class="fa fa-fw fa-map"></i> <span>返回地图</span></a></li>
         <li><a href="wind.html" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-purple"></i> <span>风电机组</span></a></li>
         <li><a href="savepower.html" style="text-align: center;font-size: large;"><i class="fa fa-circle-o text-yellow"></i> <span>储能机组</span></a></li>
         <li><a href="desalination.html" style="text-align: center;font-size: large;color: floralwhite"><i class="fa fa-circle-o text-gray"></i> <span>海淡设备</span></a></li>
@@ -414,21 +417,21 @@
                     <tbody>
                     <tr>
                       <td>产水量</td>
-                      <td > 0.0 </td>
+                      <td id="产水量" ></td>
                       <td>吨/小时</td>
                       <td > </td>
                     </tr>
                     <tr>
                       <td>负载功率</td>
-                      <td>0.0</td>
+                      <td id="负载功率"></td>
                       <td>Kw</td>
                       <td></td>
                     </tr>
                     <tr>
                       <td>就地</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="就地" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>远程</td>
-                      <td><div style="background: red;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="远程" style="background: red;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     </tbody>
                   </table>
@@ -436,47 +439,43 @@
                     <tbody>
                     <tr>
                       <td>系统正常</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="系统正常" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>启动过程</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="启动过程" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>正常运行</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="正常运行" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>正常停机过程中</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="正常停机过程中" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>停机结束</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="停机结束" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>非正常停机</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="非正常停机" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>淡水冲洗</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="淡水冲洗" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>淡水冲洗结束</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="淡水冲洗结束" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
-
             </div>
           </div>
-
-
         </div>
-
       </div>
       <div class="row">
         <div class="col-xs-12">
@@ -491,41 +490,40 @@
                     <tbody>
                     <tr>
                       <td>氧化剂液位低</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="氧化剂液位低" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>阻垢剂液位低</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="阻垢剂液位低" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>碳酸氢钠液位低</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="碳酸氢钠液位低" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>一级高压泵故障</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="一级高压泵故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>UF增压泵故障</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="UF增压泵故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>氯化铁液位低</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="氯化铁液位低" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>还原剂液位低</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="还原剂液位低" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>产水高压</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="产水高压" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>压力提升泵故障</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="压力提升泵故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>UF反洗水泵故障</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="UF反洗水泵故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
                     <tr>
                       <td>盐酸液位低</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="盐酸液位低" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>氯化钙液位低</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="氯化钙液位低" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>取水泵故障</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="取水泵故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>二级高压泵故障</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="二级高压泵故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                       <td>一级增压泵故障</td>
-                      <td><div style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
+                      <td><div id="一级增压泵故障" style="background: green;display: inherit">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div></td>
                     </tr>
-
                     </tbody>
                   </table>
                 </div>
@@ -790,5 +788,8 @@
 <!--<script src="../static/echarts-master/test/lib/jquery.min.js"></script>-->
 <script src="../static/echarts-master/test/lib/facePrint.js"></script>
 <script src="../static/echarts-master/test/lib/testHelper.js"></script>
+<!--弹窗-->
+<script src="../static/js/alertWindow.js"></script>
+<script src="../static/js/desalination.js"></script>
 </body>
 </html>

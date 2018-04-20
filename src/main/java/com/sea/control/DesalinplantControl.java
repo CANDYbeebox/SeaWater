@@ -1,5 +1,6 @@
 package com.sea.control;
 
+import com.exception.NullException;
 import com.sea.entity.Desalinplant;
 import com.sea.service.DesalinplantFun;
 import org.slf4j.Logger;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by try on 2018/4/11.
@@ -29,7 +32,7 @@ public class DesalinplantControl {
             "1", "1", "1", "1", "1", "1");
 
     @ResponseBody
-    @RequestMapping(value = "/setdata", produces = "application/text;charset=utf-8")
+    @RequestMapping(value = "/setdesalinplant", produces = "application/text;charset=utf-8")
     public String setDesalinplantData(Desalinplant d) {
         log.info("输出为{}", d);
         desalinplant.setId(d.getId());
@@ -155,4 +158,20 @@ public class DesalinplantControl {
         return "海淡设备数据更新成功";
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/getdesalinplant", produces = "application/json;charset=utf-8")
+    public Desalinplant getBatteryData(HttpSession session) {
+        int id = 0;
+        if (session.getAttribute("id") != null) {
+            id = (int)session.getAttribute("id");
+        }
+        System.out.println(id);
+        Desalinplant ret = new Desalinplant();
+        try {
+            ret = desalinplantFun.selectDesalinplantById(id);
+        } catch (NullException e) {
+            log.error(e.getMessage());
+        }
+        return ret;
+    }
 }

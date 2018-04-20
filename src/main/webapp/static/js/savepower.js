@@ -12,7 +12,7 @@ var flagBattery;
 
 function selectConverter() {
     $.ajax({
-        type: 'post',
+        type: 'get',
         url: '../savepower/getenergystorage',
         dataType: "json",
         success: function (result) {
@@ -184,7 +184,7 @@ function setHtmlConverter(data) {
 
 function selectBattery() {
     $.ajax({
-        type: 'post',
+        type: 'get',
         url: '../savepower/getbattery',
         dataType: "json",
         success: function (result) {
