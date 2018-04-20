@@ -3,7 +3,7 @@
  */
 $(document).ready(function () {
 
-    
+
     var flagDesalinplant = setInterval(getDesalinplant, 1000);
 
     function getDesalinplant() {
