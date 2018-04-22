@@ -328,9 +328,9 @@
         <li><a href="wind.html" style="text-align: center;font-size: large;color: floralwhite"><i class="fa fa-circle-o text-purple"></i> <span>风电机组</span></a></li>
         <li><a href="savepower.html" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-yellow"></i> <span>储能机组</span></a></li>
         <li><a href="desalination.html" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-gray"></i> <span>海淡设备</span></a></li>
-        <li><a href="#" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-green"></i> <span>运行记录</span></a></li>
-        <li><a href="#" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-red"></i> <span>故障报警</span></a></li>
-        <li><a href="#" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-white"></i> <span>退出系统</span></a></li>
+        <li><a href="runningrecord.html" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-green"></i> <span>运行记录</span></a></li>
+        <li><a href="erroralarm.html" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-red"></i> <span>故障报警</span></a></li>
+        <li><a href="#" style="text-align: center;font-size: large" onclick="qietu()"><i class="fa fa-circle-o text-white"></i> <span>退出系统</span></a></li>
 
       </ul>
     </section>
@@ -421,9 +421,9 @@
             </tr>
             </tbody>
           </table>
-          <img src="../static/pic/fan.jpg" width="40%">
+          <img src="../static/pic/onerunning.gif" id="picone" width="40%" height="150px">
           &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-          <img src="../static/pic/fan.jpg" width="40%">
+          <img src="../static/pic/tworunning.gif" id="pictwo" width="40%" height="150px">
 
         </div>
         <div class="col-xs-1">
@@ -880,6 +880,15 @@
 <!--<script src="../static/js/line.js"></script>-->
 <!--src-->
 <!--弹窗-->
+<script>
+  function qietu() {
+      alert("dsdddd");
+//      $("#picone").src = "onestop.jpg";
+      $('#picone').attr('src', '../static/pic/onestop.jpg');
+//      document.getElementById("picone").src="../static/pic/onestop.jpg";
+  }
+
+</script>
 <script src="../static/js/alertWindow.js"></script>
 <script src="../static/js/wind.js"></script>
 

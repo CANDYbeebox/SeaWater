@@ -21,8 +21,9 @@ $(document).ready(function () {
     //     powerTwo[i] = 0;
     // }
 
+    // document.getElementById("picone").src="onestop.jpg";
 
-// lineOne();
+    // $('#picone ').attr('src', '../static/pic/onestop.jpg');
     var flagOne = setInterval(getWindOne, 1000);
     var flagTwo = setInterval(getWindTwo, 1000);
 
@@ -70,11 +71,20 @@ $(document).ready(function () {
         $("#电网电压U1").html(data.windturb1_40065);
         $("#1s风速1").html(data.windturb1_40005);
         $("#电网电压V1").html(data.windturb1_40066);
-        $("#5min平均风速1").html(data.windturb1_40006);
+        $("#5min平均风速1").html(data.windturb1_40008);
         $("#电网电压W1").html(data.windturb1_40067);
         // $("#可发平均功率预测1").html(data.windturb1_40007);
         $("#输出电流U1").html(data.windturb1_40068);
         $("#转速1").html(data.windturb1_40008);
+        if (data.windturb1_40008 == "0" && $("#picone").attr("src") == "../static/pic/onerunning.gif") {
+
+            $("#picone").attr('src', "../static/pic/onestop.jpg");
+
+        } else if (data.windturb1_40006 != "0" && $("#picone").attr("src") == "../static/pic/onestop.jpg") {
+
+            $("#picone").attr('src', "../static/pic/onerunning.gif");
+
+        }
         $("#输出电流V1").html(data.windturb1_40069);
         $("#浆矩角1").html(data.windturb1_40009);
         $("#输出电流W1").html(data.windturb1_40070);
@@ -197,6 +207,11 @@ $(document).ready(function () {
         $("#风向2").html(data.windturb2Add0001);
         $("#风速2").html(data.windturb2Add0000);
         $("#转速2").html(data.windturb2Add0002);
+        if (data.windturb2Add0002 == "0" && $("#pictwo").attr("src") == "../static/pic/tworunning.gif") {
+            $("#pictwo").attr('src', "../static/pic/twostop.jpg");
+        } else if (data.windturb2Add0002 != "0" && $("#pictwo").attr("src") == "../static/pic/twostop.jpg") {
+            $("#pictwo").attr('src', "../static/pic/tworunning.gif");
+        }
         $("#电网电压2").html(data.windturb2Add0003);
         $("#电网电流2").html(data.windturb2Add0004);
         $("#有功功率2").html(data.windturb2Add0005);
