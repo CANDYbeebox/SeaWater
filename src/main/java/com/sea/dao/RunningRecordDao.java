@@ -11,5 +11,16 @@ import java.util.List;
  */
 public interface RunningRecordDao {
 
-    List<RunningRecordEntity> selectByTime(@Param("low") Timestamp low, @Param("high") Timestamp high);
+    List<RunningRecordEntity> selectByTime(@Param("low") Timestamp low, @Param("high") Timestamp high, @Param("name") String name);
+
+    /**
+     * 插入运行记录
+     * @param r
+     * @return
+     */
+    int insertRunningRecordPerMinute(@Param("r") RunningRecordEntity r, @Param("name") String name);
+
+
+
+
 }

@@ -36,7 +36,7 @@ $(document).ready(function () {
         $("#产水箱").html(data.desalinplantAdd1016 + " cm");
         //右侧
         //暂无数据
-        // $("#产水量").html(data.windturb1_40007);
+        // $("#产水量").html(data.desalinplantAdd1017);
         $("#负载功率").html(data.desalinplantAdd1007);
         if (data.desalinplantAdd1002Bit0Val1 == "1") {
             $("#就地").css({"background": "red"});

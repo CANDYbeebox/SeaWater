@@ -16,14 +16,17 @@ public class CompanyEntity {
 
     private double Y;
 
+    private int isopen;
+
     public CompanyEntity() {
 
     }
 
-    public CompanyEntity(int id, String name, double x, double y) {
+    public CompanyEntity(int id, String name, double x, double y, int isopen) {
         this.id = id;
         this.name = name;
         X = x;
         Y = y;
+        this.isopen = isopen;
     }
 }

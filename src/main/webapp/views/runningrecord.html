@@ -60,6 +60,9 @@
       width: 400px;
       float:right;
     }
+
+    .demo-input{padding-left: 10px; height: 38px; min-width: 262px; line-height: 38px; border: 1px solid #e6e6e6;  background-color: #fff;  border-radius: 2px;}
+
   </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -374,6 +377,9 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
+        <input type="text" class="demo-input" placeholder="请选择日期" id="time"><button onclick="confirmSelect()" type="button" class="btn  btn-primary btn-sm">查询</button>
+        <!--时间日期-->
+        <script src="../static/laydate/laydate.js"></script>
         <div class="col-xs-10">
           <table class="table table-striped" style="text-align: center">
             <caption style="text-align:center;font-size: 20px;color: deepskyblue">运行记录</caption>
@@ -387,10 +393,10 @@
               <th style="text-align: center">2#功率（w）</th>
               <th style="text-align: center">海淡功率（kw）</th>
               <th style="text-align: center">海淡产水量（T）</th>
-              <th style="text-align: center">海淡产水量（kw）</th>
+              <th style="text-align: center">PCS有功（kw）</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="运行记录">
             </tbody>
           </table>
 
@@ -654,9 +660,14 @@
 <!--分页-->
 <script src="../static/lib/jquery.pagination.js"></script>
 <script src="../static/js/runningrecord.js"></script>
-<!--自己写的js-->
-<script src="../static/js/savepower.js"></script>
 <!--弹窗-->
 <script src="../static/js/alertWindow.js"></script>
+
+<script>
+  laydate.render({
+      elem: '#time',
+      type:'datetime'//指定元素
+  });
+</script>
 </body>
 </html>

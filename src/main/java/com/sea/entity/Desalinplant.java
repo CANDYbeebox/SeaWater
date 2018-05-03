@@ -34,7 +34,7 @@ public class Desalinplant {
     private String desalinplantAdd1001Bit7;
     private String desalinplantAdd1003Bit0;
     private String desalinplantAdd1003Bit1;
-    private String desalinplantAdd1003Bit2;//
+    private String desalinplantAdd1003Bit2;
     private String desalinplantAdd1003Bit3;
     private String desalinplantAdd1003Bit4;
     private String desalinplantAdd1003Bit5;

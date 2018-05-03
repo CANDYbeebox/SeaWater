@@ -27,6 +27,7 @@
       org.springframework.web.util.Log4jConfigListener
     </listener-class>
   </listener>
+
   <listener>
     <description>启动spring容器</description>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

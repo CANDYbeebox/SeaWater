@@ -6,6 +6,18 @@
 
 
     <select id="selectByTime" resultType="com.sea.entity.RunningRecordEntity">
-        SELECT * FROM runningrecord WHERE record_time BETWEEN #{low} AND #{high}
+        SELECT * FROM ${name} WHERE record_time BETWEEN #{low} AND #{high}
     </select>
+
+    <!--<insert id="insertRunningRecordPerMinute">-->
+        <!--INSERT INTO ${name} (record_time, one_speed, one_power, two_speed, two_power, desalination_power, desalination_yield, pcs)-->
+        <!--VALUES (#{r.recordTime}, #{r.oneSpeed}, #{r.onePower}, #{r.twoSpeed}, #{r.twoPower}, #{r.desalinationPower}, #{r.desalinationYield}, #{r.pcs})-->
+    <!--</insert>-->
+
+    <insert id="insertRunningRecordPerMinute">
+        INSERT INTO ${name} (one_speed, one_power, two_speed, two_power, desalination_power, desalination_yield, pcs)
+        VALUES (#{r.oneSpeed}, #{r.onePower}, #{r.twoSpeed}, #{r.twoPower}, #{r.desalinationPower}, #{r.desalinationYield}, #{r.pcs})
+    </insert>
+
+
 </mapper>
