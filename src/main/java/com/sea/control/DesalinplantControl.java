@@ -160,7 +160,7 @@ public class DesalinplantControl {
 
     @ResponseBody
     @RequestMapping(value = "/getdesalinplant", produces = "application/json;charset=utf-8")
-    public Desalinplant getBatteryData(HttpSession session) {
+    public Desalinplant getDesalinplantData(HttpSession session) {
         int id = 0;
         if (session.getAttribute("id") != null) {
             id = (int)session.getAttribute("id");
