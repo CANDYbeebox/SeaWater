@@ -21,7 +21,7 @@ $('#login').click(function(){
             //  var data=result['result'];
             // if(data['info']=="正确")
             if (result == "success") {
-                window.location.href="map.html";
+                window.location.href="map.html"+"?"+Math.random();
             } else {
                 alertWindow("用户名或密码错误", "error");
             }

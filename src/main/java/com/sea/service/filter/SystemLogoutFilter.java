@@ -27,6 +27,8 @@ public class SystemLogoutFilter extends LogoutFilter {
         }catch (SessionException e){
             e.printStackTrace();
         }
+        System.out.println("sdsd");
+        System.out.println(redirectUrl);
         issueRedirect(request,response,redirectUrl);
         return false;
     }

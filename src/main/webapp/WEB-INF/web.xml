@@ -87,9 +87,9 @@
     <servlet-name>spring-mvc</servlet-name>
   </filter-mapping>
 
-  <welcome-file-list>
-    <welcome-file>views/LoginRegister.html</welcome-file>
+  <!--<welcome-file-list>-->
+    <!--<welcome-file>views/LoginRegister.html</welcome-file>-->
     <!--<welcome-file>hello.html</welcome-file>-->
     <!--<welcome-file>hrllp.jsp</welcome-file>-->
-  </welcome-file-list>
+  <!--</welcome-file-list>-->
 </web-app>
