@@ -37,7 +37,6 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <style>
@@ -271,7 +270,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="../static/adminLTE/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs" id="username"></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -304,7 +303,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="logout" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -330,7 +329,7 @@
         <li><a href="desalination.html" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-gray"></i> <span>海淡设备</span></a></li>
         <li><a href="runningrecord.html" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-green"></i> <span>运行记录</span></a></li>
         <li><a href="erroralarm.html" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-red"></i> <span>故障报警</span></a></li>
-        <li><a href="#" style="text-align: center;font-size: large" onclick="qietu()"><i class="fa fa-circle-o text-white"></i> <span>退出系统</span></a></li>
+        <li><a href="#" style="text-align: center;font-size: large"><i class="fa fa-circle-o text-white"></i> <span>退出系统</span></a></li>
 
       </ul>
     </section>
@@ -880,17 +879,9 @@
 <!--<script src="../static/js/line.js"></script>-->
 <!--src-->
 <!--弹窗-->
-<script>
-  function qietu() {
-      alert("dsdddd");
-//      $("#picone").src = "onestop.jpg";
-      $('#picone').attr('src', '../static/pic/onestop.jpg');
-//      document.getElementById("picone").src="../static/pic/onestop.jpg";
-  }
-
-</script>
 <script src="../static/js/alertWindow.js"></script>
 <script src="../static/js/wind.js"></script>
-
+<!--用户名-->
+<script src="../static/js/common.js"></script>
 </body>
 </html>

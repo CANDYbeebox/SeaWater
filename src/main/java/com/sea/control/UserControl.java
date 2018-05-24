@@ -58,4 +58,11 @@ public class UserControl {
     }
 
 
+    @RequestMapping(value = "/usermessage")
+    @ResponseBody
+    public String getUserMessage() {
+        String currentUsername = (String)SecurityUtils.getSubject().getPrincipal();
+        return currentUsername;
+    }
+
 }

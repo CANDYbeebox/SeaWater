@@ -55,8 +55,12 @@
     </bean>
 
 
+    <!--自定义realm-->
     <bean id="myRealm" class="com.realm.MyRealm"/>
-
+    <!--自定义退出的过滤器，清楚缓存-->
+    <bean id="logoutFilter" class="com.sea.service.filter.SystemLogoutFilter">
+        <property name="redirectUrl" value="/views/LoginRegister.html"/>
+    </bean>
     <!-- 安全管理器 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="myRealm"/>
@@ -76,6 +80,7 @@
                 /views/map.html=authc
                 /views/hello.html=roles[admin]
                 /user/teacher*/**=perms["user:create"]
+                /**/logout=logout
             </value>
         </property>
     </bean>
