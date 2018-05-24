@@ -14,6 +14,7 @@ function selectConverter() {
     $.ajax({
         type: 'get',
         url: '../savepower/getenergystorage',
+        cache:false,
         dataType: "json",
         success: function (result) {
             if (result.id == 0) {

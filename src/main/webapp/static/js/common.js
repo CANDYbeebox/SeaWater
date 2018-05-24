@@ -6,6 +6,7 @@
 $(document).ready(function () {
     $.ajax({
         type: 'get',
+        cache:false,
         url: '../user/usermessage',
         success: function (result) {
             $("#username").html(result);

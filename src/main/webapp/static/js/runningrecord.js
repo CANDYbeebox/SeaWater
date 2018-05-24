@@ -13,6 +13,7 @@ var allData;
 $(document).ready(function () {
     $.ajax({
         type: 'get',
+        cache:false,
         url: '../runningrecord/getsession',
         success: function (result) {
             if (result == "error") {
@@ -29,6 +30,7 @@ function confirmSelect() {
     var timeLong = dt.getTime();
     $.ajax({
         type: 'post',
+        cache:false,
         data:{
             timelong:timeLong
         },

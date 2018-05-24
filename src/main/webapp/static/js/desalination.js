@@ -10,6 +10,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'get',
             url: '../desalinplant/getdesalinplant',
+            cache:false,
             dataType: "json",
             success: function (result) {
                 if (result.id == 0) {

@@ -31,6 +31,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'get',
             url: '../wind/getone',
+            cache:false,
             dataType: "json",
             success: function (result) {
                 if (result.id == 0) {
@@ -51,6 +52,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'get',
             url: '../wind/gettwo',
+            cache:false,
             dataType: "json",
             success: function (result) {
                 if (result.id == 0) {
