@@ -8,13 +8,16 @@ import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.util.ByteSource;
 
 import javax.annotation.Resource;
 
 
 public class MyRealm extends AuthorizingRealm {
+    private final static String salt = "water";
 
     @Resource
     private UserFun userService;
@@ -41,12 +44,15 @@ public class MyRealm extends AuthorizingRealm {
             AuthenticationToken token) throws AuthenticationException {
         String username = (String) token.getPrincipal();
         UserEntity user = userService.getByUsername(username);
+        System.out.println(salt);
+        ByteSource u = ByteSource.Util.bytes(salt);
+        System.out.println(u);
         if (user != null) {
-            AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(user.getUsername(), user.getPassword(), getName());
+            AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(user.getUsername(), user.getPassword(), ByteSource.Util.bytes(salt), getName());
             return authcInfo;
         } else {
             return null;
         }
-
     }
+
 }

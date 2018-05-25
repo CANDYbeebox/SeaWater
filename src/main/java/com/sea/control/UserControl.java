@@ -26,6 +26,7 @@ import java.util.List;
 public class UserControl {
     @Autowired
     UserFun userFun;
+
     Logger log = LoggerFactory.getLogger(UserControl.class);
 
 

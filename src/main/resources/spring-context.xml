@@ -56,7 +56,14 @@
 
 
     <!--自定义realm-->
-    <bean id="myRealm" class="com.realm.MyRealm"/>
+    <bean id="myRealm" class="com.realm.MyRealm">
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <property name="hashAlgorithmName" value="MD5"></property> <!-- 加密算法的名称 -->
+                <property name="hashIterations" value="1"></property> <!-- 配置加密的次数 -->
+            </bean>
+        </property>
+    </bean>
     <!--自定义退出的过滤器，清楚缓存-->
     <bean id="logoutFilter" class="com.sea.service.filter.SystemLogoutFilter">
         <property name="redirectUrl" value="/views/LoginRegister.html"/>
