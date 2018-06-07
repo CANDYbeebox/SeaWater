@@ -218,11 +218,11 @@
       <artifactId>ehcache-core</artifactId>
       <version>2.5.3</version>
     </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-jdk14</artifactId>
-      <version>1.6.4</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.slf4j</groupId>-->
+      <!--<artifactId>slf4j-jdk14</artifactId>-->
+      <!--<version>1.6.4</version>-->
+    <!--</dependency>-->
 
     <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
     <dependency>

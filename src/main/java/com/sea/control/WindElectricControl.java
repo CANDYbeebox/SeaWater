@@ -4,6 +4,7 @@ import com.exception.NullException;
 import com.sea.entity.WindElectricEntity;
 import com.sea.entity.WindEletricTwoEntity;
 import com.sea.service.Wind;
+//import org.apache.log4j.Logger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,8 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/wind")
 public class WindElectricControl {
     Logger log = LoggerFactory.getLogger(WindElectricControl.class);
+//    private static Logger log = Logger.getLogger(WindElectricControl.class);
+
     WindElectricEntity windOne = new WindElectricEntity(1,
             "1", "1", "1", "1", "1",
             "1", "1", "1", "1", "1",

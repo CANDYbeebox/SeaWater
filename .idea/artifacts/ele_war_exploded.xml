@@ -54,7 +54,6 @@
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-ehcache:1.2.0" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-spring:1.2.0" />
           <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-core:2.5.3" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-jdk14:1.6.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">

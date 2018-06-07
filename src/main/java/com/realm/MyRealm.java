@@ -44,9 +44,7 @@ public class MyRealm extends AuthorizingRealm {
             AuthenticationToken token) throws AuthenticationException {
         String username = (String) token.getPrincipal();
         UserEntity user = userService.getByUsername(username);
-        System.out.println(salt);
         ByteSource u = ByteSource.Util.bytes(salt);
-        System.out.println(u);
         if (user != null) {
             AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(user.getUsername(), user.getPassword(), ByteSource.Util.bytes(salt), getName());
             return authcInfo;
