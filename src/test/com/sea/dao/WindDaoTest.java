@@ -18,6 +18,7 @@ public class WindDaoTest {
     @Autowired
     WindDao windDao;
 
+
     @Test
     public void updateWindOne() throws Exception {
     }

@@ -2,6 +2,7 @@ package com.sea.dao;
 
 import com.sea.entity.WindElectricEntity;
 import com.sea.entity.WindEletricTwoEntity;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * Created by try on 2018/3/27.
@@ -14,6 +15,7 @@ public interface WindDao {
      * @return
      */
     int updateWindOne(WindElectricEntity w);
+
 
     /**
      *

@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sea.dao.WindDao">
 
+
     <update id="updateWindOne">
         UPDATE windone SET
         windturb1_40007=#{windturb1_40007},

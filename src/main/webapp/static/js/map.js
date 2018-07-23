@@ -61,11 +61,23 @@ function showMarker() {
 
                     //地图标注点
                     var point = new BMap.Point(value.x, value.y);
-                    var marker = new BMap.Marker(point); //将点转化成标注点
-//                                var label = new window.BMap.Label(i+1, { offset: new window.BMap.Size(0, 0) });
+
+
+                    // var icons = "../pic/greenbubble.png"; //这个是你要显示坐标的图片的相对路径
+                    // var marker = new BMap.Marker(point); //lng为经度,lat为纬度
+                    // var icon = new BMap.Icon(icons, new BMap.Size(50, 50)); //显示图标大小
+                    // marker.setIcon(icon);//设置标签的图标为自定义图标
+
+                    var myIcon = new BMap.Icon("/static/pic/greenbubble.png", new BMap.Size(23, 25), {
+                        offset: new BMap.Size(10, 25), // 指定定位位置
+                        imageOffset: new BMap.Size(0, 0 - 10 * 25) // 设置图片偏移
+                    });
+                    var marker=new BMap.Marker(point,{icon:myIcon})
+
+                    // var marker = new BMap.Marker(point); //将点转化成标注点
                     var label = new window.BMap.Label(value.id, { offset: new window.BMap.Size(0, 0) });
                     label.setStyle({
-                        color : "white",
+                        color : "blue",
                         fontSize : "14px",
                         backgroundColor :"0.05",
                         border :"0",
@@ -79,7 +91,7 @@ function showMarker() {
                         // var thePoint = value;
                         marker.addEventListener("click",
                             function() {
-                                alert(value.id);
+                                // alert(value.id);
                                 setId(value.id);
                                 //   showInfo(this,thePoint);
                             });
@@ -91,6 +103,15 @@ function showMarker() {
             }
         }
     });
+    
+}
+
+function greenBubble() {
+    var icons = "../pic/greenbubble.png"; //这个是你要显示坐标的图片的相对路径
+    var markers = new BMap.Marker(new BMap.Point(lng, lat)); //lng为经度,lat为纬度
+    var icon = new BMap.Icon(icons, new BMap.Size(15, 15)); //显示图标大小
+    markers.setIcon(icon);//设置标签的图标为自定义图标
+    map.addOverlay(markers);//将标签添加到地图中去
     
 }
 
